@@ -1,4 +1,4 @@
-# List of greenery content
+# Greenery content
 
 ## Buildings
 
