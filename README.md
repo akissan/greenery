@@ -4,7 +4,7 @@
 
 - Seed Bed `seed-bed`
 - Glasshouse `glasshouse`
-- ![gh_icon](./graphics/items/gh_icon.png) Greenhouse `greenhouse`
+- ![gh_icon](./graphics/items/greenhouse.png) Greenhouse `greenhouse`
 
 - Nanoinjector `injector`
 
