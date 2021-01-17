@@ -14,9 +14,9 @@ data:extend({
         dying_explosion = "iron-chest-explosion",
 
         alert_icon_shift = utl.by_pixel(0, -6),
-        collision_box = {{-1, -1}, {1, 1}},
-        selection_box = {{-1, -1}, {1, 1}},
-        drawing_box = {{-1, -1}, {1, 1}},
+        collision_box = {{-0.5, -0.5}, {0.5, 0.5}},
+        selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+        drawing_box = {{-0.5, -0.5}, {0.5, 0.5}},
 
         resistances = {{type = "impact", percent = 70}},
         open_sound = {
@@ -44,8 +44,8 @@ data:extend({
                         priority = "high",
                         width = 512,
                         height = 512,
-                        shift = {1.0, 0},
-                        scale = 0.0625
+                        shift = {0, 0},
+                        scale = 0.25
                     }
                 }, {
                     draw_as_shadow = true,
@@ -62,8 +62,8 @@ data:extend({
                         priority = "high",
                         width = 256,
                         height = 256,
-                        shift = {2.0, 0.0},
-                        scale = 2.0
+                        shift = {0.0, 0.0},
+                        scale = 0.25
                     }
                 }
             }
