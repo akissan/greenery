@@ -4,7 +4,7 @@ data:extend({
     {
         type = "assembling-machine",
         name = utl.PR .. "greenhouse",
-        icon = utl.GP .. "/entity/greenhouse/gh.png",
+        icon = utl.GP .. "/items/greenhouse.png",
         icon_size = 512,
         flags = {"placeable-neutral", "placeable-player", "player-creation"},
         minable = {mining_time = 0.2, result = utl.PR .. "greenhouse"},
@@ -13,126 +13,12 @@ data:extend({
         dying_explosion = "medium-explosion",
         fast_replaceable_group = "assembling-machine",
 
-        alert_icon_shift = {0, 0}, -- util.by_pixel(0, -12),
+        alert_icon_shift = utl.by_pixel(0, -12),
         collision_box = {{-6, -6}, {6, 6}},
         selection_box = {{-6, -6}, {6, 6}},
         drawing_box = {{-6, -6}, {6, 6}},
 
         resistances = {{type = "electric", percent = 70}},
-        --[[
-    fluid_boxes =
-    
-    {
-      {
-        production_type = "input",
-        --pipe_picture = pipe_pics,
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = -1,
-        pipe_connections = {{ type="input", position = {-5, 2} }},
-        secondary_draw_orders = { north = -1 }
-      },
-      {
-        production_type = "input",
-        --pipe_picture = pipe_pics,
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = -1,
-        pipe_connections = {{ type="input", position = {-2, -5} }},
-        secondary_draw_orders = { north = -1 }
-      },
-      {
-        production_type = "input",
-        --pipe_picture = pipe_pics,
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = -1,
-        pipe_connections = {{ type="input", position = {-5, 0} }},
-        secondary_draw_orders = { north = -1 }
-      },
-      {
-        production_type = "input",
-        --pipe_picture = pipe_pics,
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = -1,
-        pipe_connections = {{ type="input", position = {0, -5} }},
-        secondary_draw_orders = { north = -1 }
-      },
-      {
-        production_type = "input",
-        --pipe_picture = pipe_pics,
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = -1,
-        pipe_connections = {{ type="input", position = {-5, -2} }},
-        secondary_draw_orders = { north = -1 }
-      },
-      {
-        production_type = "input",
-        --pipe_picture = pipe_pics,
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = -1,
-        pipe_connections = {{ type="input", position = {2, -5} }},
-        secondary_draw_orders = { north = -1 }
-      },
-      {
-        production_type = "output",
-        --pipe_picture = pipe_pics,
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = 1,
-        pipe_connections = {{ type="output", position = {-2, 5} }},
-        secondary_draw_orders = { north = -1 }
-      },
-      {
-        production_type = "output",
-        --pipe_picture = pipe_pics,
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = 1,
-        pipe_connections = {{ type="output", position = {5, 2} }},
-        secondary_draw_orders = { north = -1 }
-      },
-      {
-        production_type = "output",
-        --pipe_picture = pipe_pics,
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = 1,
-        pipe_connections = {{ type="output", position = {0, 5} }},
-        secondary_draw_orders = { north = -1 }
-      },
-      {
-        production_type = "output",
-        --pipe_picture = pipe_pics,
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = 1,
-        pipe_connections = {{ type="output", position = {5, 0} }},
-        secondary_draw_orders = { north = -1 }
-      },
-      {
-        production_type = "output",
-        --pipe_picture = pipe_pics,
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = 1,
-        pipe_connections = {{ type="output", position = {2, 5} }},
-        secondary_draw_orders = { north = -1 }
-      },
-      {
-        production_type = "output",
-        --pipe_picture = pipe_pics,
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = 1,
-        pipe_connections = {{ type="output", position = {5, -2} }},
-        secondary_draw_orders = { north = -1 }
-      },
-    },
-    --]]
         open_sound = {
             filename = "__base__/sound/machine-open.ogg",
             volume = 0.85
@@ -156,35 +42,32 @@ data:extend({
             idle_sound = {filename = "__base__/sound/pipe.ogg", volume = 0.6},
             apparent_volume = 1.5
         },
-        --[[ collision_mask = {
-            "water-tile", "ground-tile", "item-layer", "object-layer",
-            "player-layer"
-        }, ]] --
         animation = {
             layers = {
                 {
-                    filename = utl.GP .. "/entity/greenhouse/gh.png",
+                    filename = utl.GP .. "/entity/greenhouse/greenhouse.png",
                     priority = "high",
                     width = 512,
                     height = 512,
                     frame_count = 24,
                     line_length = 6,
-                    shift = {0, 0}, -- util.by_pixel(0, -16),
+                    shift = {0, 0},
                     animation_speed = 0.1,
                     hr_version = {
-                        filename = utl.GP .. "/entity/greenhouse/gh.png",
+                        filename = utl.GP .. "/entity/greenhouse/greenhouse.png",
                         priority = "high",
                         width = 512,
                         height = 512,
                         frame_count = 24,
                         line_length = 6,
-                        shift = {0, 0}, -- util.by_pixel(0, -16),
+                        shift = {0, 0},
                         animation_speed = 0.1,
                         scale = 1.0
                     }
                 }, {
                     draw_as_shadow = true,
-                    filename = utl.GP .. "/entity/greenhouse/gh_shadow.png",
+                    filename = utl.GP ..
+                        "/entity/greenhouse/greenhouse_shadow.png",
                     priority = "high",
                     width = 256,
                     height = 256,
@@ -194,7 +77,8 @@ data:extend({
                     shift = {2.0, 0.0},
                     hr_version = {
                         draw_as_shadow = true,
-                        filename = utl.GP .. "/entity/greenhouse/gh_shadow.png",
+                        filename = utl.GP ..
+                            "/entity/greenhouse/greenhouse_shadow.png",
                         priority = "high",
                         width = 256,
                         height = 256,
@@ -205,7 +89,6 @@ data:extend({
                         scale = 2.0
                     }
                 }
-                -- ]]
             }
         },
         crafting_categories = {"crafting", "advanced-crafting"},
@@ -218,10 +101,10 @@ data:extend({
         energy_usage = "3000kW",
         ingredient_count = 12,
         module_specification = {module_slots = 4},
-        allowed_effects = {"consumption", "speed", "pollution"}, -- not "productivity",
+        allowed_effects = {"consumption", "speed", "pollution"},
         working_visualisations = {
             {
-                effect = "uranium-glow", -- changes alpha based on energy source light intensity
+                effect = "uranium-glow",
                 light = {
                     intensity = 0.2,
                     size = 16,
