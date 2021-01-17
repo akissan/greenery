@@ -44,7 +44,7 @@ data:extend({
                         priority = "high",
                         width = 512,
                         height = 512,
-                        shift = {0, 0},
+                        shift = {-0.5, 0},
                         scale = 0.25
                     }
                 }, {
