@@ -11,7 +11,7 @@ data:extend({
         minable = {mining_time = 0.2, result = utl.PR .. e_name},
         max_health = 100,
         corpse = "small-remnants",
-        dying_explosion = "small-explosion",
+        dying_explosion = "iron-chest-explosion",
 
         alert_icon_shift = utl.by_pixel(0, -6),
         collision_box = {{-1, -1}, {1, 1}},
@@ -45,7 +45,7 @@ data:extend({
                         width = 512,
                         height = 512,
                         shift = {1.0, 0},
-                        scale = 1.0
+                        scale = 0.0625
                     }
                 }, {
                     draw_as_shadow = true,

@@ -69,8 +69,8 @@ data:extend({
                     }
                 }, {
                     draw_as_shadow = true,
-                    filename = utl.GP .. utl.GP .. "/entity/" .. e_name .. "/" ..
-                        e_name .. "_shadow.png",
+                    filename = utl.GP .. "/entity/" .. e_name .. "/" .. e_name ..
+                        "_shadow.png",
                     priority = "high",
                     width = 256,
                     height = 256,
@@ -80,8 +80,8 @@ data:extend({
                     shift = {2.0, 0.0},
                     hr_version = {
                         draw_as_shadow = true,
-                        filename = utl.GP .. utl.GP .. "/entity/" .. e_name ..
-                            "/" .. e_name .. "_shadow.png",
+                        filename = utl.GP .. "/entity/" .. e_name .. "/" ..
+                            e_name .. "_shadow.png",
                         priority = "high",
                         width = 256,
                         height = 256,
