@@ -4,7 +4,7 @@ data:extend({
     {
         type = "assembling-machine",
         name = utl.PR .. "greenhouse",
-        icon = utl.GP .. "/items/greenhouse.png",
+        icon = utl.GP .. "/items/i_greenhouse.png",
         icon_size = 512,
         flags = {"placeable-neutral", "placeable-player", "player-creation"},
         minable = {mining_time = 0.2, result = utl.PR .. "greenhouse"},
