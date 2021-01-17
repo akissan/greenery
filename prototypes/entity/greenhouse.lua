@@ -5,7 +5,7 @@ data:extend({
     {
         type = "assembling-machine",
         name = utl.PR .. e_name,
-        icon = utl.GP .. "/items/" .. e_name ".png",
+        icon = utl.GP .. "/items/" .. e_name .. ".png",
         icon_size = 128,
         flags = {"placeable-neutral", "placeable-player", "player-creation"},
         minable = {mining_time = 0.2, result = utl.PR .. e_name},
