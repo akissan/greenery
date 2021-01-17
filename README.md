@@ -2,9 +2,10 @@
 
 ## Buildings
 
+- ![tc_icon](./graphics/items/test_cube.png) Test Cube `test-cube`
 - Seed Bed `seed-bed`
 - Glasshouse `glasshouse`
-- ![gh_icon](./graphics/items/i_greenhouse.png) Greenhouse `greenhouse`
+- ![gh_icon](./graphics/items/greenhouse.png) Greenhouse `greenhouse`
 
 - Nanoinjector `injector`
 

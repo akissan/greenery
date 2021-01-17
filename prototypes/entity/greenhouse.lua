@@ -1,13 +1,14 @@
 local utl = require("utl")
+local e_name = "greenhouse"
 
 data:extend({
     {
         type = "assembling-machine",
-        name = utl.PR .. "greenhouse",
-        icon = utl.GP .. "/items/i_greenhouse.png",
-        icon_size = 512,
+        name = utl.PR .. e_name,
+        icon = utl.GP .. "/items/" .. e_name ".png",
+        icon_size = 128,
         flags = {"placeable-neutral", "placeable-player", "player-creation"},
-        minable = {mining_time = 0.2, result = utl.PR .. "greenhouse"},
+        minable = {mining_time = 0.2, result = utl.PR .. e_name},
         max_health = 700,
         corpse = "big-remnants",
         dying_explosion = "medium-explosion",
@@ -45,7 +46,8 @@ data:extend({
         animation = {
             layers = {
                 {
-                    filename = utl.GP .. "/entity/greenhouse/greenhouse.png",
+                    filename = utl.GP .. "/entity/" .. e_name .. "/" .. e_name ..
+                        ".png",
                     priority = "high",
                     width = 512,
                     height = 512,
@@ -54,7 +56,8 @@ data:extend({
                     shift = {0, 0},
                     animation_speed = 0.1,
                     hr_version = {
-                        filename = utl.GP .. "/entity/greenhouse/greenhouse.png",
+                        filename = utl.GP .. "/entity/" .. e_name .. "/" ..
+                            e_name .. ".png",
                         priority = "high",
                         width = 512,
                         height = 512,
@@ -66,8 +69,8 @@ data:extend({
                     }
                 }, {
                     draw_as_shadow = true,
-                    filename = utl.GP ..
-                        "/entity/greenhouse/greenhouse_shadow.png",
+                    filename = utl.GP .. utl.GP .. "/entity/" .. e_name .. "/" ..
+                        e_name .. "_shadow.png",
                     priority = "high",
                     width = 256,
                     height = 256,
@@ -77,8 +80,8 @@ data:extend({
                     shift = {2.0, 0.0},
                     hr_version = {
                         draw_as_shadow = true,
-                        filename = utl.GP ..
-                            "/entity/greenhouse/greenhouse_shadow.png",
+                        filename = utl.GP .. utl.GP .. "/entity/" .. e_name ..
+                            "/" .. e_name .. "_shadow.png",
                         priority = "high",
                         width = 256,
                         height = 256,

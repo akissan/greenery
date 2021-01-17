@@ -4,8 +4,8 @@ items_path="../graphics/items/"
 
 # echo $(ls $aseprite_path/)
 
-# $aseprite_path/Aseprite -b hr/hr_${1}*.png --sheet ${entity_path}hr_$1.png --sheet-type rows --sheet-columns 6  
-# $aseprite_path/Aseprite -b lr/${1}*.png --sheet ${entity_path}$1.png --sheet-type rows --sheet-columns 6
+$aseprite_path/Aseprite -b hr/hr_${1}*.png --sheet ${entity_path}hr_$1.png --sheet-type rows --sheet-columns 6  
+$aseprite_path/Aseprite -b lr/${1}*.png --sheet ${entity_path}$1.png --sheet-type rows --sheet-columns 6
 
 # ./Aseprite/Aseprite -b shadows/shadow_${1}*.png --sheet $1.png --sheet-type rows --sheet-columns 6
 
