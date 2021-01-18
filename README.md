@@ -2,6 +2,7 @@
 
 ## Buildings
 
+- ![tc_icon](./graphics/items/test-cube.png) Test Cube `test-cube`
 - Seed Bed `seed-bed`
 - Glasshouse `glasshouse`
 - ![gh_icon](./graphics/items/greenhouse.png) Greenhouse `greenhouse`
