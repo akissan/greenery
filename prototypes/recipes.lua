@@ -13,5 +13,11 @@ data:extend({
         enabled = true,
         ingredients = {{"iron-plate", 1}},
         result = utl.PR .. "test-cube"
+    }, {
+        type = "recipe",
+        name = "sprinkler",
+        enabled = true,
+        ingredients = {{"iron-stick", 2}, {"pipe", 2}},
+        result = utl.PR .. "sprinkler"
     }
 })
