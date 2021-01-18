@@ -14,8 +14,8 @@ data:extend({
         dying_explosion = "iron-chest-explosion",
 
         alert_icon_shift = utl.by_pixel(0, -6),
-        collision_box = {{-0.5, -0.5}, {0.5, 0.5}},
-        selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+        collision_box = {{-0.35, -0.35}, {0.35, 0.35}},
+        selection_box = {{-0.45, -0.85}, {0.45, 0.45}},
         drawing_box = {{-0.5, -0.5}, {0.5, 0.5}},
 
         resistances = {{type = "impact", percent = 70}},
@@ -35,35 +35,33 @@ data:extend({
                     filename = utl.GP .. "/entity/" .. e_name .. "/" .. e_name ..
                         ".png",
                     priority = "high",
-                    width = 256,
-                    height = 256,
-                    shift = {0, 0},
+                    width = 64,
+                    height = 64,
+                    shift = {0, -0.2},
                     hr_version = {
                         filename = utl.GP .. "/entity/" .. e_name .. "/hr_" ..
                             e_name .. ".png",
                         priority = "high",
-                        width = 512,
-                        height = 512,
-                        shift = {-0.5, 0},
-                        scale = 0.25
+                        width = 128,
+                        height = 128,
+                        shift = {0, -0.2},
+                        scale = 0.5
                     }
                 }, {
                     draw_as_shadow = true,
                     filename = utl.GP .. "/entity/" .. e_name .. "/" .. e_name ..
                         "_shadow.png",
                     priority = "high",
-                    width = 256,
-                    height = 256,
-                    shift = {2.0, 0.0},
+                    width = 64,
+                    height = 64,
+                    shift = {1.0, -0.2},
                     hr_version = {
-                        draw_as_shadow = true,
                         filename = utl.GP .. "/entity/" .. e_name .. "/" ..
                             e_name .. "_shadow.png",
                         priority = "high",
-                        width = 256,
-                        height = 256,
-                        shift = {0.0, 0.0},
-                        scale = 0.25
+                        width = 64,
+                        height = 64,
+                        shift = {1.0, -0.2}
                     }
                 }
             }
