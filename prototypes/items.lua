@@ -8,7 +8,7 @@ data:extend({
         icon_size = 128,
         -- flags = { "goes-to-quickbar" },
         subgroup = "production-machine",
-        order = "e[2]",
+        order = "g[greenhouse]",
         place_result = utl.PR .. "greenhouse",
         stack_size = 10
     }, {
@@ -18,8 +18,17 @@ data:extend({
         icon_size = 128,
         -- flags = { "goes-to-quickbar" },
         subgroup = "storage",
-        order = "b[storage]",
+        order = "0[test-cube]",
         place_result = utl.PR .. "test-cube",
         stack_size = 50
+    }, {
+        type = "item",
+        name = utl.PR .. "sprinkler",
+        icon = utl.GP .. "/items/sprinkler.png",
+        icon_size = 128,
+        -- flags = { "goes-to-quickbar" },
+        subgroup = "intermediate-product",
+        order = "s[sprinkler]",
+        stack_size = 100
     }
 })

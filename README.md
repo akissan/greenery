@@ -39,7 +39,7 @@
 
 - Sand dust `sand`
 - Glass `glass`
-- Sprinkler `sprinkler`
+- ![tc_icon](./graphics/items/sprinkler.png) Sprinkler `sprinkler`
 
 ## Recipes
 
