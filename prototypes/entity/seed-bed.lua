@@ -1,0 +1,109 @@
+local utl = require("utl")
+local e_name = "seed-bed"
+
+data:extend({
+    {
+        type = "assembling-machine",
+        name = utl.PR .. e_name,
+        icon = utl.GP .. "/items/" .. e_name .. ".png",
+        icon_size = 128,
+        flags = {"placeable-neutral", "placeable-player", "player-creation"},
+        minable = {mining_time = 0.2, result = utl.PR .. e_name},
+        max_health = 700,
+        corpse = "big-remnants",
+        dying_explosion = "medium-explosion",
+        fast_replaceable_group = "assembling-machine",
+
+        alert_icon_shift = utl.by_pixel(0, -12),
+        collision_box = {{-2.75, -0.8}, {2.75, 0.8}},
+        selection_box = {{-2.8, -1}, {2.8, 1.75}},
+        drawing_box = {{-2.8, -1}, {2.8, 1.75}},
+
+        resistances = {{type = "electric", percent = 70}},
+        open_sound = {
+            filename = "__base__/sound/machine-open.ogg",
+            volume = 0.85
+        },
+        close_sound = {
+            filename = "__base__/sound/machine-close.ogg",
+            volume = 0.75
+        },
+        vehicle_impact_sound = {
+            filename = "__base__/sound/car-metal-impact.ogg",
+            volume = 0.65
+        },
+        working_sound = {
+            sound = {
+                {filename = "__base__/sound/pumpjack.ogg", volume = 0.8},
+                {
+                    filename = "__base__/sound/assembling-machine-t3-1.ogg",
+                    volume = 0.8
+                }
+            },
+            idle_sound = {filename = "__base__/sound/pipe.ogg", volume = 0.6},
+            apparent_volume = 1.5
+        },
+        animation = {
+            layers = {
+                {
+                    filename = utl.GP .. "/entity/" .. e_name .. "/" .. e_name ..
+                        "N.png",
+                    priority = "high",
+                    width = 256,
+                    height = 256,
+                    frame_count = 1,
+                    line_length = 1,
+                    shift = {0, 0},
+                    animation_speed = 0.1,
+                    hr_version = {
+                        filename = utl.GP .. "/entity/" .. e_name .. "/hr-" ..
+                            e_name .. "N.png",
+                        priority = "high",
+                        width = 512,
+                        height = 512,
+                        frame_count = 1,
+                        line_length = 1,
+                        shift = {0, 0},
+                        animation_speed = 0.1,
+                        scale = 0.5
+                    }
+                }, {
+                    draw_as_shadow = true,
+                    filename = utl.GP .. "/entity/" .. e_name .. "/" .. e_name ..
+                        "_shadow.png",
+                    priority = "high",
+                    width = 256,
+                    height = 256,
+                    frame_count = 1,
+                    line_length = 1,
+                    repeat_count = 1,
+                    shift = {3.75, 0.0},
+                    hr_version = {
+                        draw_as_shadow = true,
+                        filename = utl.GP .. "/entity/" .. e_name .. "/" ..
+                            e_name .. "_shadow.png",
+                        priority = "high",
+                        width = 256,
+                        height = 256,
+                        frame_count = 1,
+                        line_length = 1,
+                        repeat_count = 1,
+                        shift = {3.125, 0.125},
+                        scale = 2.25 / 4
+                    }
+                }
+            }
+        },
+        crafting_categories = {"crafting", "advanced-crafting"},
+        crafting_speed = 4,
+        energy_source = {
+            type = "electric",
+            usage_priority = "secondary-input",
+            emissions_per_minute = 4
+        },
+        energy_usage = "3000kW",
+        ingredient_count = 12,
+        module_specification = {module_slots = 4},
+        allowed_effects = {"consumption", "speed", "pollution"}
+    }
+})
