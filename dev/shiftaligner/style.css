@@ -1,0 +1,34 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+#spriteinput {
+  background-color: #363d42;
+  width: 100%;
+  padding: 24px;
+  margin: 0;
+  color: gray;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  box-sizing: border-box;
+}
+
+.modeButton {
+  height: 32px;
+  width: 48px;
+  border: none;
+  border-radius: 8px;
+  transition-duration: 0.15s;
+  padding: 8px;
+}
+
+.modeButton:hover {
+  box-shadow: 0 0 30px #ed8a0040;
+  background-color: #ed8a00;
+}
