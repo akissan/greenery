@@ -1,3 +1,5 @@
+import initButtons from "./cmps/buttons";
+
 let grid = true;
 
 let loadedSprite = null;
@@ -20,55 +22,45 @@ let CENT = [0, 0];
 hightDrop = () => dropzone.style("background-color", "orange");
 unhightDrop = () => dropzone.style("background-color", "#363d42");
 
+const initDropzone = () => {
+  let dz = select("#spriteinput");
+  dz.drop(gotFile, unhightDrop);
+  dz.dragOver(hightDrop);
+  dz.dragLeave(unhightDrop);
+  return dz;
+};
+
+const initSlider = (pos) => {
+  let slide = createSlider(0, 4, 1, 1);
+  slide.position(...pos);
+  return;
+};
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
-  dropzone = select("#spriteinput");
-  dropzone.drop(gotFile, unhightDrop);
-  dropzone.dragOver(hightDrop);
-  dropzone.dragLeave(unhightDrop);
+  dropzone = initDropzone();
+  slider = initSlider(64, 128);
 
-  slider = createSlider(0, 4, 1, 1);
-  slider.position(64, 256);
-
-  button = createButton("Grid");
-  button.addClass("modeButton");
-  button.position(64, 84);
-  button.mousePressed(toggleGrid);
-
-  button2 = createButton("x-");
-  button2.addClass("modeButton");
-  button2.position(128, 84);
-  button2.mousePressed((e) => adjustShift([-1 * npx, 0]));
-
-  button3 = createButton("x+");
-  button3.addClass("modeButton");
-  button3.position(192, 84);
-  button3.mousePressed((e) => adjustShift([1 * npx, 0]));
-
-  button4 = createButton("y+");
-  button4.addClass("modeButton");
-  button4.position(128, 84 + 48);
-  button4.mousePressed((e) => adjustShift([0, 1 * npx]));
-
-  button5 = createButton("y-");
-  button5.addClass("modeButton");
-  button5.position(192, 84 + 48);
-  button5.mousePressed((e) => adjustShift([0, -1 * npx]));
+  initButtons();
 
   shift = createVector(-0.5, 0.5);
+
   collision_box = [
     [-0.35, -0.35],
     [0.35, 0.35],
   ];
-
   noSmooth();
+
+  loadedSprite = getItem("Lsprite");
+  console.log(loadedSprite);
 }
 
 adjustShift = (v) => shift.add(v);
 
 gotFile = (file) => {
   loadedSprite = createImg(file.data);
+  storeItem("Lsprite", loadedSprite);
   loadedSprite.hide();
 };
 
@@ -86,7 +78,7 @@ drawBounds = (bs) => {
 
   let bdshift = tile * 0.5;
 
-  console.log(-bs[0][0] + bs[1][0]);
+  //  console.log(-bs[0][0] + bs[1][0]);
   rect(
     CENT[0] * tile + bs[0][0] * tile + bdshift,
     CENT[1] * tile + bs[0][1] * tile + bdshift,
@@ -127,10 +119,10 @@ function draw() {
       loadedSprite,
       CENT[0] * tile + shiftToPx(shift).x,
       CENT[1] * tile + shiftToPx(shift).y,
-      tile * 4,
-      tile * 4
+      20,
+      20
     );
-    console.log("DRAW");
+    //console.log("DRAW");
     drawBounds(collision_box);
   }
 
