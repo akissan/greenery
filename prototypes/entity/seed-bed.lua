@@ -1,5 +1,74 @@
 local utl = require("utl")
+
 local e_name = "seed-bed"
+
+local horizontal_layers = {
+    {
+        filename = utl.GP .. "/entity/" .. e_name .. "/" .. e_name .. "W.png",
+        frame_count = 30,
+        line_length = 6,
+        priority = "extra-high",
+        width = 256,
+        height = 256,
+        shift = {0, 0},
+        hr_version = {
+            filename = utl.GP .. "/entity/" .. e_name .. "/hr_" .. e_name ..
+                "W.png",
+            frame_count = 30,
+            line_length = 6,
+            priority = "extra-high",
+            width = 512,
+            height = 512,
+            shift = {0, -0.5},
+            scale = 0.5
+        }
+    }, {
+        draw_as_shadow = true,
+        filename = utl.GP .. "/entity/" .. e_name .. "/" .. e_name ..
+            "W_shadow.png",
+        priority = "high",
+        width = 256,
+        height = 256,
+        frame_count = 1,
+        line_length = 1,
+        repeat_count = 30,
+        shift = utl.by_pixel(32, -1)
+    }
+}
+
+local vertical_layers = {
+    {
+        filename = utl.GP .. "/entity/" .. e_name .. "/" .. e_name .. "N.png",
+        frame_count = 30,
+        line_length = 6,
+        priority = "extra-high",
+        width = 256,
+        height = 256,
+        shift = {0, 0},
+        hr_version = {
+            filename = utl.GP .. "/entity/" .. e_name .. "/hr_" .. e_name ..
+                "N.png",
+            frame_count = 30,
+            line_length = 6,
+            priority = "extra-high",
+            width = 512,
+            height = 512,
+            shift = {0, 0},
+            scale = 0.5
+        }
+    }, {
+        draw_as_shadow = true,
+        filename = utl.GP .. "/entity/" .. e_name .. "/" .. e_name ..
+            "N_shadow.png",
+        priority = "high",
+        width = 256,
+        height = 256,
+        frame_count = 1,
+        line_length = 1,
+        repeat_count = 30,
+        shift = utl.by_pixel(-1, 1)
+    }
+}
 
 data:extend({
     {
@@ -15,9 +84,8 @@ data:extend({
         fast_replaceable_group = "assembling-machine",
 
         alert_icon_shift = utl.by_pixel(0, -12),
-        collision_box = {{-2.75, -0.8}, {2.75, 0.8}},
-        selection_box = {{-2.8, -1}, {2.8, 1.75}},
-        drawing_box = {{-2.8, -1}, {2.8, 1.75}},
+        collision_box = {{-2.5 + 0.25, -0.75}, {2.5 - 0.25, 0.75}},
+        selection_box = {{-2.5, -1}, {2.5, 1}},
 
         resistances = {{type = "electric", percent = 70}},
         open_sound = {
@@ -44,55 +112,10 @@ data:extend({
             apparent_volume = 1.5
         },
         animation = {
-            layers = {
-                {
-                    filename = utl.GP .. "/entity/" .. e_name .. "/" .. e_name ..
-                        "N.png",
-                    priority = "high",
-                    width = 256,
-                    height = 256,
-                    frame_count = 1,
-                    line_length = 1,
-                    shift = {0, 0},
-                    animation_speed = 0.1,
-                    hr_version = {
-                        filename = utl.GP .. "/entity/" .. e_name .. "/hr-" ..
-                            e_name .. "N.png",
-                        priority = "high",
-                        width = 512,
-                        height = 512,
-                        frame_count = 1,
-                        line_length = 1,
-                        shift = {0, 0},
-                        animation_speed = 0.1,
-                        scale = 0.5
-                    }
-                }, {
-                    draw_as_shadow = true,
-                    filename = utl.GP .. "/entity/" .. e_name .. "/" .. e_name ..
-                        "_shadow.png",
-                    priority = "high",
-                    width = 256,
-                    height = 256,
-                    frame_count = 1,
-                    line_length = 1,
-                    repeat_count = 1,
-                    shift = {3.75, 0.0},
-                    hr_version = {
-                        draw_as_shadow = true,
-                        filename = utl.GP .. "/entity/" .. e_name .. "/" ..
-                            e_name .. "_shadow.png",
-                        priority = "high",
-                        width = 256,
-                        height = 256,
-                        frame_count = 1,
-                        line_length = 1,
-                        repeat_count = 1,
-                        shift = {3.125, 0.125},
-                        scale = 2.25 / 4
-                    }
-                }
-            }
+            north = {layers = horizontal_layers},
+            west = {layers = vertical_layers},
+            south = {layers = horizontal_layers},
+            east = {layers = vertical_layers}
         },
         crafting_categories = {"crafting", "advanced-crafting"},
         crafting_speed = 4,

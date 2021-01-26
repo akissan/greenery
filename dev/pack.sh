@@ -1,5 +1,5 @@
 aseprite_path="../../../Aseprite/"
-entity_path="../graphics/entity/$1/"
+entity_path="../graphics/entity/${3:-$1}/"
 items_path="../graphics/items/"
 
 cp_and_keep_last() {
