@@ -14,7 +14,8 @@ class CircleBB {
   }
   /** @param {V2} dv */
   checkDV(dv) {
-    return dv.len2 < r * r;
+    console.log(this.r);
+    return dv.len2 < this.r * this.r;
   }
 }
 
@@ -64,8 +65,8 @@ class BoundingBox {
    */
   constructor(bbtype = BBTYPES.CIRCLE, bbparams = this.default_bbparams) {
     this.bb = new BBConstuctor[bbtype](bbparams || this.default_bbparams);
-    this.checkDV = function (dx, dy) {
-      return this.bb.checkDV(dx, dy);
+    this.checkDV = function (tpoint) {
+      return this.bb.checkDV(tpoint);
     };
   }
 }
@@ -84,20 +85,19 @@ class Interactive {
    * @param {V2} origin
    * @param {MVC} mvConstrains - {@link MVC}
    * @param {BBTYPES} bbtype - {@link BBTYPES}
-   * @param {BoundingBox.default_bbparams} bbparams
    */
   constructor(
-    origin = new V2(x, y),
+    origin,
     mvConstrains = { x: false, y: false },
     bbtype = BBTYPES.CIRCLE,
-    bbparams = null
+    bbsettings = null
   ) {
-    console.log(bbparams);
-    this.boundingBox = new BoundingBox(bbtype, bbparams);
+    this.boundingBox = new BoundingBox(bbtype, bbsettings);
     this.mvConstrains = mvConstrains;
     this.origin = origin;
     this.x = origin.x;
     this.y = origin.y;
+    console.log(bbsettings);
     Interactive.All.push(this);
   }
 
@@ -106,6 +106,9 @@ class Interactive {
    */
   containsPoint(tpoint) {
     let dv = tpoint.sub(this.origin);
+    console.log(dv.v);
+    console.log(tpoint.v);
+    console.log(this.origin.v);
     return this.boundingBox.checkDV(dv);
   }
 

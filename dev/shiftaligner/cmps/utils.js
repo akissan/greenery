@@ -25,11 +25,24 @@ class V2 {
   /** @param {number} val */
   scale = (val) => new V2(this.x * val, this.y * val);
 
-  norm = () => this.scale(this.len());
-  len = () => Math.sqrt(this.x * this.x + this.y * this.y);
-  len2 = () => this.x * this.x + this.y * this.y;
-  swap = () => new V2(this.y, this.x);
-  copy = () => new V2(this.x, this.y);
+  get norm() {
+    return this.div(this.len());
+  }
+  get len() {
+    return Math.sqrt(this.x * this.x + this.y * this.y);
+  }
+  get len2() {
+    return this.x * this.x + this.y * this.y;
+  }
+  get swap() {
+    return new V2(this.y, this.x);
+  }
+  get copy() {
+    return new V2(this.x, this.y);
+  }
+  get v() {
+    return { x: this.x, t: this.y };
+  }
 
   /** @param {V2} v */
   less = (v) => this.len2() < v.len2();

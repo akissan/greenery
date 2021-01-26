@@ -18,65 +18,32 @@ ALIGN = {
 };
 
 /**
- * @typedef {{color: string}, {align: ALIGN_MODE}} DRAWPRMS
+ * @typedef {{mvConstrains: MVC, bbtype: BBTYPES, bbparams: * }} BBPRMS
+ * @typedef {{color: string, align: ALIGN_MODE}} DRAWPRMS
  */
 
 class Drawable extends Interactive {
+  /** @type {Drawable[]} All */
+  static All = [];
+  static all = (f) => Drawable.All.forEach(f);
+
   /**
    *
    * @param {V2} origin
-   * @param {DRAWPRMS} drawparams - Drawparams - {@link DRAWPRMS}
+   * @param {DRAWPRMS} dprms - {@link DRAWPRMS}
+   * @param {BBPRMS} bbprms - {@link BBPRMS}
    */
   constructor(
     origin,
-    dprms = { color: "red", align = ALIGN_MODE.TL },
-    bbprms
+    bbprms = {},
+    dprms = { color: "red", align: ALIGN_MODE.TL }
   ) {
-    super(origin, bbprms);
+    super(origin, bbprms.mvConstrains, bbprms.bbtype, bbprms.bbsettings);
     this.color = dprms.color;
+    Drawable.All.push(this);
   }
 
   draw = () => {
     console.error("Drawable should not be drawed!");
   };
 }
-
-class Panel extends Drawable {
-  /**
-   *
-   * @param {V2} origin
-   * @param {number} h
-   * @param {number} w
-   * @param {ALIGN_MODE} align
-   */
-  constructor(origin, h, w, { bbparams, drawparams } = {}) {
-    super(origin, { bbparams, drawparams });
-    this.h = h;
-    this.w = w;
-  }
-
-  draw = () => {
-    let v1 = new V2(),
-      v2 = new V2();
-    switch (this.align) {
-      case ALIGN_MODE.TL:
-        v1 = this.origin;
-        v2 = this.origin.add(new V2(h, 2));
-    }
-    rect(v1.x, v1.y, v2.x, v2.y);
-  };
-}
-
-class circ {
-  constructor(origin, r = 10, color = "red") {
-    this.origin = origin;
-    this.r = r;
-    this.color = color;
-  }
-  draw = () => {
-    fill(this.color);
-    circle(this.origin.x, this.origin.y);
-  };
-}
-
-class MovableCircle {}

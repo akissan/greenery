@@ -4,7 +4,7 @@ const CONTROLS = {
 };
 
 function mouseClicked() {
-  Interactive.all((_) => console.log(_.containsPoint(mouseX, mouseY)));
+  Interactive.all((_) => console.log(_.containsPoint(new V2(mouseX, mouseY))));
 }
 
 function mouseReleased() {
@@ -31,7 +31,7 @@ function mouseMoved() {
 function mousePressed() {
   if (!CONTROLS.dragObject) {
     Interactive.All.some((_) => {
-      if (_.containsPoint(mouseX, mouseY)) {
+      if (_.containsPoint(new V2(mouseX, mouseY))) {
         CONTROLS.dragObject = _;
         CONTROLS.dragObject.onDrag();
         return true;
