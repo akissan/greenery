@@ -4,11 +4,6 @@ let check_button_1;
 
 let buttons;
 
-const CONTROLS = {
-  isMPressed: false,
-  dragObject: null,
-};
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   check_button = new Interactive(25, 25, {
@@ -20,44 +15,6 @@ function setup() {
   check_button.color = "green";
   check_button_1.color = "red";
   rectMode(CORNERS);
-}
-
-function mouseClicked() {
-  buttons.forEach((_) => console.log(_.containsPoint(mouseX, mouseY)));
-}
-
-function mouseReleased() {
-  if (CONTROLS.dragObject) {
-    CONTROLS.dragObject.onDragFinish();
-    CONTROLS.dragObject = null;
-  }
-}
-
-function mouseDragged() {
-  console.log("dragged");
-  if (CONTROLS.dragObject) {
-    CONTROLS.dragObject.drag();
-  }
-}
-
-function mouseMoved() {
-  console.log("moved");
-  if (CONTROLS.dragObject) {
-    CONTROLS.dragObject.drag();
-  }
-}
-
-function mousePressed() {
-  if (!CONTROLS.dragObject) {
-    buttons.some((_) => {
-      if (_.containsPoint(mouseX, mouseY)) {
-        CONTROLS.dragObject = _;
-        CONTROLS.dragObject.onDrag();
-        return true;
-      }
-      return false;
-    });
-  }
 }
 
 function draw() {

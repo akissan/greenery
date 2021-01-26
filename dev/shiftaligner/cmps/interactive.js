@@ -1,3 +1,7 @@
+/**
+ * @typedef {(CIRCLE,BOX,RECT)} BBTYPES
+ */
+
 const BBTYPES = {
   CIRCLE: 1,
   BOX: 2,
@@ -8,8 +12,9 @@ class CircleBB {
   constructor({ r }) {
     this.r = r;
   }
-  checkDV(dx, dy) {
-    return dx * dx + dy * dy < this.r * this.r;
+  /** @param {V2} dv */
+  checkDV(dv) {
+    return dv.len2 < r * r;
   }
 }
 
@@ -17,14 +22,9 @@ class SquareBB {
   constructor({ r }) {
     this.r = r;
   }
-  checkDV(dx, dy) {
-    return abs(dx) < this.r * 0.5 && abs(dy) < this.r * 0.5;
-  }
-}
-
-class V2 {
-  constructor(x = 0, y = 0) {
-    (this.x = x), (this.y = y);
+  /** @param {V2} dv */
+  checkDV(dv) {
+    return abs(dv.x) < this.r * 0.5 && abs(dv.y) < this.r * 0.5;
   }
 }
 
@@ -58,6 +58,10 @@ class BoundingBox {
     db: 5.0,
   };
 
+  /**
+   *
+   * @param {BBTYPES} bbtype
+   */
   constructor(bbtype = BBTYPES.CIRCLE, bbparams = this.default_bbparams) {
     this.bb = new BBConstuctor[bbtype](bbparams || this.default_bbparams);
     this.checkDV = function (dx, dy) {
@@ -66,33 +70,43 @@ class BoundingBox {
   }
 }
 
+/**
+ * @typedef {{x: boolean, y: boolean}} MVC
+ */
+
+/** Interactive objects */
 class Interactive {
+  /** @type {Interactive[]} All */
+  static All = [];
+  static all = (f) => Interactive.All.forEach(f);
+
   /**
-   * @param {number} x
-   * @param {number} y
+   * @param {V2} origin
+   * @param {MVC} mvConstrains - {@link MVC}
+   * @param {BBTYPES} bbtype - {@link BBTYPES}
+   * @param {BoundingBox.default_bbparams} bbparams
    */
   constructor(
-    x,
-    y,
-    {
-      prms = null,
-      origin = new V2(x, y),
-      bbtype = BBTYPES.CIRCLE,
-      mvConstrains = { x: false, y: false },
-    } = {}
+    origin = new V2(x, y),
+    mvConstrains = { x: false, y: false },
+    bbtype = BBTYPES.CIRCLE,
+    bbparams = null
   ) {
-    console.log(prms);
-    this.boundingBox = new BoundingBox(bbtype, prms);
+    console.log(bbparams);
+    this.boundingBox = new BoundingBox(bbtype, bbparams);
     this.mvConstrains = mvConstrains;
     this.origin = origin;
     this.x = origin.x;
     this.y = origin.y;
+    Interactive.All.push(this);
   }
 
-  containsPoint(tx, ty) {
-    let dx = tx - this.origin.x;
-    let dy = ty - this.origin.y;
-    return this.boundingBox.checkDV(dx, dy);
+  /** Check if *this* contains point
+   * @param {V2} tpoint
+   */
+  containsPoint(tpoint) {
+    let dv = tpoint.sub(this.origin);
+    return this.boundingBox.checkDV(dv);
   }
 
   move(tx, ty) {
