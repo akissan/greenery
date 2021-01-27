@@ -14,7 +14,7 @@ data:extend({
         dying_explosion = "iron-chest-explosion",
 
         alert_icon_shift = utl.by_pixel(0, 0),
-        collision_box = {{-2, -2}, {2, 2}},
+        collision_box = {{-2 + 0.25, -2 + 0.25}, {2 - 0.25, 2 - 0.25}},
 
         picture = {
             layers = {
@@ -22,9 +22,17 @@ data:extend({
                     filename = utl.GP .. "/entity/" .. e_name .. "/" .. e_name ..
                         ".png",
                     priority = "high",
-                    width = 64,
-                    height = 64,
+                    width = 128,
+                    height = 128,
                     shift = {0, 0}
+                }, {
+                    draw_as_shadow = true,
+                    filename = utl.GP .. "/entity/" .. e_name .. "/" .. e_name ..
+                        "_shadow.png",
+                    priority = "high",
+                    width = 128,
+                    height = 128,
+                    shift = {4, 0}
                 }
             }
         },

@@ -1,0 +1,19 @@
+cropV & cropH - output image size 
+!! shift for normal/HR images IS NOT SUPPORTED YET !!
+
+ShadowShift - shift: { x: value, y: 0 }
+
+Resolution - render resolution
+OrthScale - orthographic scale (camera property)
+ObjectSize - object width (x axis) in blender units / factorio tiles
+TileSize - factorio tile size (32x32)
+
+File output - output basepath and subpath.
+e.g:
+    SHOutput - sh/entityName -> base_path/sh/niceAssembler0000.png
+    LROutput - lr/entityName -> base_path/lr/niceAssembler0000.png
+    HROutput - hr/entityName -> base_path/hr/niceAssembler0000.png
+or
+    SHOutput - entityName/entityName_sh     -> base_path/niceAssembler/niceAssembler0000_sh.png
+    LROutput - entityName/entityName        -> base_path/niceAssembler/niceAssembler0000.png
+    HROutput - entityName/hr-entityName_sh  -> base_path/niceAssebler/hr-niceAssembler0000.png

@@ -29,6 +29,6 @@ IC | "")
   cp_and_keep_last $1 icons ${items_path}
   ;;
 SH | "")
-  cp_and_keep_last $1 shadows ${entity_path} _shadow
+  cp_and_keep_last $1 sh ${entity_path} _shadow
   ;;
 esac
