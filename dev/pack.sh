@@ -1,5 +1,5 @@
 aseprite_path="../../../Aseprite/"
-entity_path="../graphics/entity/$1/"
+entity_path="../graphics/entity/${3:-$1}/"
 items_path="../graphics/items/"
 
 cp_and_keep_last() {
@@ -29,6 +29,6 @@ IC | "")
   cp_and_keep_last $1 icons ${items_path}
   ;;
 SH | "")
-  cp_and_keep_last $1 shadows ${entity_path} _shadow
+  cp_and_keep_last $1 sh ${entity_path} _shadow
   ;;
 esac

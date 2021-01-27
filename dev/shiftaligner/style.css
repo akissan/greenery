@@ -8,9 +8,13 @@ canvas {
   display: block;
 }
 
-#spriteinput {
+.dropzonecontainer {
+  display: flex;
+}
+
+.dz {
   background-color: #363d42;
-  width: 100%;
+  width: 50%;
   padding: 24px;
   margin: 0;
   color: gray;

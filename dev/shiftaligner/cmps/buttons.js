@@ -12,17 +12,10 @@ class ButtonInfo {
   }
 }
 
-const initButtons = () =>
-  Object.entries(buttons).foreach((buttonName, buttonInfo) =>
-    initButton(buttonName, buttonInfo.pos, ButtonInfo.onPressed)
-  );
+const initButtons = (btns) => {
+  console.log(Object.entries(btns));
 
-const buttons = {
-  Grid: new ButtonInfo([64, 84], toggleGrid),
-  "x-": new ButtonInfo([128, 84], (e) => adjustShift([-1 * npx, 0])),
-  "x+": new ButtonInfo([192, 84], (e) => adjustShift([1 * npx, 0])),
-  "y+": new ButtonInfo([128, 84 + 48], (e) => adjustShift([0, 1 * npx])),
-  "y-": new ButtonInfo([192, 84 + 48], (e) => adjustShift([0, -1 * npx])),
+  for (let [buttonName, bi] of Object.entries(btns)) {
+    initButton(buttonName, bi.pos, bi.onPressed);
+  }
 };
-
-export default initButtons;

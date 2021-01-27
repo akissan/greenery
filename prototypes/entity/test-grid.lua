@@ -13,10 +13,8 @@ data:extend({
         corpse = "small-remnants",
         dying_explosion = "iron-chest-explosion",
 
-        alert_icon_shift = utl.by_pixel(0, -6),
-        collision_box = {{-0.35, -0.35}, {0.35, 0.35}},
-        selection_box = {{-0.45, -0.45}, {0.45, 0.45}},
-        drawing_box = {{-0.5, -0.5}, {0.5, 0.5}},
+        alert_icon_shift = utl.by_pixel(0, 0),
+        collision_box = {{-2 + 0.25, -2 + 0.25}, {2 - 0.25, 2 - 0.25}},
 
         picture = {
             layers = {
@@ -24,18 +22,17 @@ data:extend({
                     filename = utl.GP .. "/entity/" .. e_name .. "/" .. e_name ..
                         ".png",
                     priority = "high",
-                    width = 32,
-                    height = 32,
-                    shift = {-0.5, 0.5},
-                    hr_version = {
-                        filename = utl.GP .. "/entity/" .. e_name .. "/" ..
-                            e_name .. ".png",
-                        priority = "high",
-                        width = 32,
-                        height = 32,
-                        shift = {-0.5, 0.5},
-                        scale = 2
-                    }
+                    width = 128,
+                    height = 128,
+                    shift = {0, 0}
+                }, {
+                    draw_as_shadow = true,
+                    filename = utl.GP .. "/entity/" .. e_name .. "/" .. e_name ..
+                        "_shadow.png",
+                    priority = "high",
+                    width = 128,
+                    height = 128,
+                    shift = {4, 0}
                 }
             }
         },
