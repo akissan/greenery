@@ -1,75 +1,110 @@
 # Greenery content
 
-## Buildings
+### Buildings
 
-- ![tc_icon](./graphics/items/test-cube.png) Test Cube `test-cube`
-- ![tc_icon](./graphics/items/seed-bed.png) Seed Bed `seed-bed`
-- Glasshouse `glasshouse`
-- ![gh_icon](./graphics/items/greenhouse.png) Greenhouse `greenhouse`
+- Microfauna `microfauna` (Produces/Smelters ores using HS-I) (2x2)
+- Nest `nest` (Produces HS-I, HS-I Queen and lesser resources) (3x3)
+- Hive `hive` (Produces HS-I, HS-I Queen and greater resources) (1x1)
+- Nanoinjector `injector` (Produces HS-I and Queens) (2x2)
+- Extractor `extractor` (Produces nutrient and biomass) (2x2)
+- Nanoextractor `nanoextractor` (Extracts nanofuel and spice) (1x1)
+- Advanced smelter `lasersmelter` (Fast smelting) (1x1)
+- Bioactive unit `bioburner` (Produces energy using HS-I power) (1x1)
+- Bioreactor `bioreactor` (Produces energy using HS-I power and nanofuel) (4x4)
 
-- Nanoinjector `injector`
+### Items
 
-- Extractor `extractor`
-
-## Items
-
-### Plant-related
-
-- Nauvius seeds `seeds`
 - Nauvius biomass `biomass`
-
 - Supernutrient medium `nutrient`
-- Supplement solution `supplement`
-
-### Biology-related
-
-- Microfauna `microfauna`
-
-### Nanobiology-related
-
 - HS-I `hsi`
 - HS-I Queen `hsi-q`
-
 - Nanowax `nanowax`
-- Hive `hive`
-- Apiary `apiary`
-- Nest `nest`
+- Nanofuel `purplepoop` (fluid)
+- Spice `spice`
+- Spice Injection `buffinjection` (Grants movespeed, crafting speed, regeneration bonus)
 
-### Components
+# Progression
 
-- Sand dust `sand`
-- Glass `glass`
-- ![tc_icon](./graphics/items/sprinkler.png) Sprinkler `sprinkler`
+### Earlygame
 
-## Recipes
+#### Green circuits
 
-| Name        | Category            | C1            | C2                 | C3              | C4       |
-| ----------- | ------------------- | ------------- | ------------------ | --------------- | -------- |
-| seed-bed    | crafting            | landfill x4   | wood x4            | sprinkler x2    |
-| seed-bed    | crafting            | landfill x4   | iron-plate x4      | sprinkler x2    |
-| glasshouse  | crafting            | seed-bed 4    | steel-plate x4     | sprinkler x8    | glass x4 |
-| greenhouse  | crafting            | glasshouse x2 | steel-plate x8     | glass x16       |
-| sand        | crafting            | stone x1      |
-| glass       | smelting            | sand x4       |
-| srinkler    | crafting            | pipe x2       | iron-stick x2      |
-| seeds       | crafting            | biomass       | supplement x2      |
-| seeds       | crafting            | biomass       | nutrient           |
-| biomass     | cultivation         | seeds         | water x100         |
-| biomass     | cultivation         | seeds         | water x100         | supplement x 5  |
-| biomass     | cultivation         | seeds         | water x100         | nutrient x1     |
-| biomass     | cultivation         | seeds         | steam x200         | nutrient x1     |
-| supplement  | crafting            | coal x2       | stone x2           |
-| nutrient    | extraction          | biomass x20   |
-| nutrient x2 | extraction          | microfauna    |
-| microfauna  | crafting            | biomass x10   | nutrient           | iron-plate x4   | glass    |
-| hsi         | injecting           | microfauna    | electronic-circuit |
-| hsi-q       | injecting           | hs-i x50      | nutrient x2        | processing-unit |
-| hsi         | apiculture          | supplement x5 |
-| hsi         | apiculture          | nutrient      |
-| hsi         | apiculture          | hsi-q         |
-| hsi-q       | apiculture          | nutrient x25  |
-| nanowax     | crafting-with-fluid | light-oil     | sand x10           | coal x20        |
-| nanowax     | apiculture          | hsi           | supplement x5      |
-| nanowax     | apiculture          | hsi           | nutrient           |
-| nanowax     | apiculture          | hsi           | nanowax            |
-| ...         |
+1. Produce biomass using `extractor`. Produce `hsi` using `biomass` in `injector`.
+2. Build some `nest`s using `biomass` and `hsi`. Create `nanowax`
+3. Extract `nutrient` from `nanowax`. Use it in `nest` to evolve `hsi` into `hsi-q`.
+4. Begin to mass-produce `hsi` in nests.
+5. Build `microfauna`. Put `hsi` and ore in there to produce more ore.
+
+#### Red circuits
+
+6. Produce queens using red circuits instead of evolving with chance.
+
+### Midgame
+
+#### Laser turrets
+
+7. Use `lasersmelter` to quickly smelt ores.
+
+#### Blue circuits
+
+8. Create `nanoextractor` to extract `purplepoop` from `nanowax`. Extract `spice` from poop.
+9. Use `bioburner`s to produce power from `purplepoop`.
+10. Use `spice` to boost HS-I-related productions.
+
+### Endgame
+
+#### Turbine 
+
+11. Use `bioreactor` to produce a lot of power.
+
+# Recipes
+
+### Assembler
+
+| name |  components | 
+| - | - |
+| Microfauna |  |
+| Nest |  |
+| Hive |  |
+| Nanoinjector |  |
+| Extractor |  |
+| Nanoextractor |  |
+| Advanced smelter | |
+| Bioactive unit | |
+| Bioreactor |  |
+
+### Extractor
+
+| name |  components | 
+| - | - |
+| Biomass |  |
+| Spice | |
+
+### Nest
+
+| name |  components | 
+| - | - |
+| Nanowax | |
+| HS-I | |
+| HS-I Queen | |
+
+### Hive
+
+| name |  components | 
+| - | - |
+| Nanowax | |
+| HS-I | |
+| HS-I Queen | |
+
+### Nanoinjector
+
+| name |  components | 
+| - | - |
+| HS-I | |
+| HS-I Queen | |
+
+### Nanoextractor 
+
+| name |  components | 
+| - | - |
+| Nanofuel | |
