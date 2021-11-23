@@ -1,5 +1,7 @@
 # Greenery
 
+![queen](hr/hsi_queen.png)
+
 ## Content
 
 ### Buildings
@@ -18,8 +20,8 @@
 
 - Nauvius biomass `biomass`
 - Supernutrient medium `nutrient`
-- HS-I `hsi`
-- HS-I Queen `hsi-q`
+- ![hsi](graphics/items/hsi.png) HS-I `hsi`
+- ![hsi-q](graphics/items/hsi-q.png) HS-I Queen `hsi-q`
 - Nanowax `nanowax`
 - Nanofuel `purplepoop` (fluid)
 - Spice `spice`
