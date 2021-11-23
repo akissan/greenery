@@ -1,10 +1,12 @@
-# Greenery content
+# Greenery
+
+## Content
 
 ### Buildings
 
-- Microfauna `microfauna` (Produces/Smelters ores using HS-I) (2x2)
-- Nest `nest` (Produces HS-I, HS-I Queen and lesser resources) (3x3)
-- Hive `hive` (Produces HS-I, HS-I Queen and greater resources) (1x1)
+- Microfauna `microfauna` (Produces/Smelters ores using HS-I) (3x2)
+- Nest `nest` (Produces HS-I, HS-I Queen and lesser resources) (2x2)
+- Hive `hive` (Produces HS-I, HS-I Queen and greater resources) (4x4)
 - Nanoinjector `injector` (Produces HS-I and Queens) (2x2)
 - Extractor `extractor` (Produces nutrient and biomass) (2x2)
 - Nanoextractor `nanoextractor` (Extracts nanofuel and spice) (1x1)
@@ -23,7 +25,7 @@
 - Spice `spice`
 - Spice Injection `buffinjection` (Grants movespeed, crafting speed, regeneration bonus)
 
-# Progression
+## Progression
 
 ### Earlygame
 
@@ -53,58 +55,58 @@
 
 ### Endgame
 
-#### Turbine 
+#### Turbine
 
 11. Use `bioreactor` to produce a lot of power.
 
-# Recipes
+## Recipes
 
 ### Assembler
 
-| name |  components | 
-| - | - |
-| Microfauna |  |
-| Nest |  |
-| Hive |  |
-| Nanoinjector |  |
-| Extractor |  |
-| Nanoextractor |  |
-| Advanced smelter | |
-| Bioactive unit | |
-| Bioreactor |  |
+| name             | components |
+| ---------------- | ---------- |
+| Microfauna       |            |
+| Nest             |            |
+| Hive             |            |
+| Nanoinjector     |            |
+| Extractor        |            |
+| Nanoextractor    |            |
+| Advanced smelter |            |
+| Bioactive unit   |            |
+| Bioreactor       |            |
 
 ### Extractor
 
-| name |  components | 
-| - | - |
-| Biomass |  |
-| Spice | |
+| name    | components |
+| ------- | ---------- |
+| Biomass |            |
+| Spice   |            |
 
 ### Nest
 
-| name |  components | 
-| - | - |
-| Nanowax | |
-| HS-I | |
-| HS-I Queen | |
+| name       | components |
+| ---------- | ---------- |
+| Nanowax    |            |
+| HS-I       |            |
+| HS-I Queen |            |
 
 ### Hive
 
-| name |  components | 
-| - | - |
-| Nanowax | |
-| HS-I | |
-| HS-I Queen | |
+| name       | components |
+| ---------- | ---------- |
+| Nanowax    |            |
+| HS-I       |            |
+| HS-I Queen |            |
 
 ### Nanoinjector
 
-| name |  components | 
-| - | - |
-| HS-I | |
-| HS-I Queen | |
+| name       | components |
+| ---------- | ---------- |
+| HS-I       |            |
+| HS-I Queen |            |
 
-### Nanoextractor 
+### Nanoextractor
 
-| name |  components | 
-| - | - |
-| Nanofuel | |
+| name     | components |
+| -------- | ---------- |
+| Nanofuel |            |
