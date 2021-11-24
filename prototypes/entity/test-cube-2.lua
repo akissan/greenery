@@ -7,7 +7,7 @@ data:extend({
         name = utl.PR .. e_name,
         icon = utl.GP .. "/entity/test-cube-2/2x2x45.png",
         -- icon = utl.GP .. "/items/" .. "test-cube".. ".png",
-        icon_size = 128,
+        icon_size = 64,
         flags = {"placeable-neutral", "placeable-player", "player-creation"},
         minable = {mining_time = 0.2, result = utl.PR .. e_name},
         max_health = 100,
@@ -36,15 +36,15 @@ data:extend({
                     filename = utl.GP .. "/entity/" .. "test-cube-2" .. "/" ..
                         "2x2x45" .. ".png",
                     priority = "high",
-                    width = 128,
-                    height = 128,
+                    width = 64,
+                    height = 64,
                     shift = {0, 0},
                     hr_version = {
                         filename = utl.GP .. "/entity/" .. "test-cube-2" .. "/" ..
                             "2x2x45" .. "-hr.png",
                         priority = "high",
-                        width = 256,
-                        height = 256,
+                        width = 128,
+                        height = 128,
                         shift = {0, 0},
                         scale = 0.5
                     }

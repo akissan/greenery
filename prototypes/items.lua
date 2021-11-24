@@ -86,7 +86,7 @@ data:extend({
         type = "item",
         name = utl.PR .. "test-cube-2",
         icon = utl.GP .. "/entity/test-cube-2/2x2x45.png",
-        icon_size = 128,
+        icon_size = 64,
         subgroup = "intermediate-product",
         place_result = utl.PR .. "test-cube-2",
         order = "tc[2]",

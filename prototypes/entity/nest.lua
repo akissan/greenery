@@ -55,15 +55,15 @@ data:extend({
                     filename = utl.GP .. "/entity/" .. "test-cube-2" .. "/" ..
                         "2x2x45" .. ".png",
                     priority = "high",
-                    width = 128,
-                    height = 128,
+                    width = 64,
+                    height = 64,
                     shift = {0, 0},
                     hr_version = {
                         filename = utl.GP .. "/entity/" .. "test-cube-2" .. "/" ..
                             "2x2x45" .. "-hr.png",
                         priority = "high",
-                        width = 256,
-                        height = 256,
+                        width = 128,
+                        height = 128,
                         shift = {0, 0},
                         scale = 0.5
                     }
