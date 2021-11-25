@@ -35,19 +35,20 @@ data:extend({
                     filename = utl.GP .. "/entity/" .. e_name .. "/" .. e_name ..
                         ".png",
                     priority = "high",
-                    width = 64,
-                    height = 64,
-                    shift = {0, -0.2},
+                    width = 32,
+                    height = 32,
+                    -- shift = {0, -0.2},
                     hr_version = {
                         filename = utl.GP .. "/entity/" .. e_name .. "/hr_" ..
                             e_name .. ".png",
                         priority = "high",
-                        width = 128,
-                        height = 128,
-                        shift = {0, -0.2},
+                        width = 64,
+                        height = 64,
+                        -- shift = {0, -0.2},
                         scale = 0.5
                     }
-                }, {
+                }, 
+                {
                     draw_as_shadow = true,
                     filename = utl.GP .. "/entity/" .. e_name .. "/" .. e_name ..
                         "_shadow.png",

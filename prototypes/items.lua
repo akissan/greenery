@@ -12,7 +12,9 @@ data:extend({
         order = "g[greenhouse]",
         place_result = utl.PR .. "greenhouse",
         stack_size = 10
-    }, {
+    }, 
+    ]]--
+    {
         type = "item",
         name = utl.PR .. "test-cube",
         icon = utl.GP .. "/items/test-cube.png",
@@ -22,7 +24,9 @@ data:extend({
         order = "0[test-cube]",
         place_result = utl.PR .. "test-cube",
         stack_size = 50
-    }, {
+    }, 
+    --[[
+    {
         type = "item",
         name = utl.PR .. "sprinkler",
         icon = utl.GP .. "/items/sprinkler.png",
